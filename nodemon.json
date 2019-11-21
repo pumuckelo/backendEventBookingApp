@@ -1,0 +1,7 @@
+{
+  "env": {
+    "MONGO_USER": "swift",
+    "MONGO_PASSWORD": "X4JzEAKD0UydFT8x",
+    "MONGO_DB": "event-app-dev"
+  }
+}
