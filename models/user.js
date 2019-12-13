@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const autopopulate = require("mongoose-autopopulate");
 
 const userSchema = new Schema({
   email: {
@@ -17,10 +18,11 @@ const userSchema = new Schema({
   createdEvents: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Event"
+      ref: "Event",
+      autopopulate: true
     }
   ]
 });
-
+userSchema.plugin(autopopulate);
 const User = mongoose.model("User", userSchema);
 module.exports = User;
